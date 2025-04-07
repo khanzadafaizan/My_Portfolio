@@ -1,38 +1,229 @@
-.App {
-  text-align: center;
+/* Define the light theme for the website */
+[data-theme="light"] {
+  /* Set the background color to white */
+  --bg-color: #fff;
+  /* Set the text color to black */
+  --text-color: #333;
+  /* Set the heading color to black */
+  --heading-color: #333;
+  /* Set the Nav Active color to light mood */
+  --active-color: #a9a9a9;
+  --active-resume-color-: #ebebeb;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Define the dark theme for the website */
+[data-theme="dark"] {
+  /* Set the background color to black */
+  --bg-color: #333;
+  /* Set the text color to white */
+  --text-color: #e0dddd;
+  /* Set the heading color to white */
+  --heading-color: #e0dddd;
+  /* Set the heading color to dark mood */
+  --active-color: #fff;
+  --active-resume-color-: #484848;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--heading-color) !important;
+  font-family: "Inter";
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navbar link text color */
+a {
+  color: var(--text-color) !important;
+}
+/* Navbar link size */
+.nav-link {
+  font-size: 18px !important;
+  cursor: pointer;
+  /* padding: 0.5rem 1rem; */
+  transition: background-color 0.3s; /* Add a smooth transition for better UX */
+}
+/* Navbar link hover size */
+.nav-link:hover {
+  font-size: 18px !important;
+  color: var(--active-color) !important;
+}
+.nav-link.active {
+  color: var(--active-color) !important;
+}
+.brand {
+  font-size: x-large !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+}
+.image {
+  width: 20px;
+}
+.profile {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden; /* Ensure image doesn't overflow the circle */
+}
+.profile img {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+.intro {
+  font-size: 68px !important;
+  font-weight: 800 !important;
+}
+.intro-text {
+  font-weight: 600 !important;
+  line-height: 18px;
+}
+.about-div {
+  margin-top: 50px !important ;
+}
+.about {
+  font-size: 48px !important;
+  font-weight: 700 !important;
+}
+.about-text {
+  display: flex;
+  font-weight: 600 !important;
+  width: 50% !important;
+  margin: auto !important;
+  align-items: center;
+}
+.skills {
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  background: rgba(153, 153, 153, 0.2);
+  border-radius: 5px;
+  font-weight: 600;
+  color: var(--text-color) !important;
+}
+.fa-brands {
+  text-decoration: none;
+}
+.mybtn {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
   color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #3880ec;
 }
-
-.App-link {
-  color: #61dafb;
+.mybtn:hover {
+  background-color: #0b5ed7;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.resume_data_div {
+  width: 40%;
+}
+.resume_img_div {
+  width: 13%;
+}
+.btn-arrow {
+  animation: gototop 1.2s linear infinite alternate-reverse !important;
+}
+.resume_bg {
+  background-color: var(--active-resume-color-) !important;
+  color: var(--text-color) !important;
+}
+@keyframes gototop {
+  0% {
+    transform: translateY(-0.5rem);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+.resume_bg_div {
+  border-radius: 5px;
+  font-weight: 600;
+  color: var(--text-color) !important;
+}
+.switch-label {
+  display: flex;
+  align-items: center;
+}
+.theme-toggle {
+  margin-left: auto; /* Pushes the toggle to the right */
+  cursor: pointer;
+}
+.moon-image,
+.sun-image {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-left: 10px; /* Adjust spacing between switch and image */
+}
+@media screen and (max-width: 376px) {
+  .brand {
+    font-size: 20px !important;
+  }
+  .intro {
+    font-size: 58px !important;
+    font-weight: 800 !important;
+    line-height: 50px;
+  }
+  .about-text {
+    display: flex;
+    font-weight: 600 !important;
+    width: 100% !important;
+    margin: auto !important;
+    align-items: center;
+  }
+  .skills {
+    padding: 0.5rem 2.5rem;
+    margin-bottom: 0.5rem;
+    background: rgba(153, 153, 153, 0.2);
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--text-color) !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .intro {
+    font-size: 58px !important;
+    font-weight: 800 !important;
+    line-height: 50px;
+  }
+  .about-text {
+    display: flex;
+    font-weight: 600 !important;
+    width: 100% !important;
+    margin: auto !important;
+    align-items: center;
+  }
+  .skills {
+    padding: 0.5rem 2.5rem;
+    margin-bottom: 0.5rem;
+    background: rgba(153, 153, 153, 0.2);
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--text-color) !important;
+  }
+  .resume_img_div {
+    width: 35%;
+  }
+  .resume_data_div {
+    width: 10%;
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    overflow: hidden; /* Ensure image doesn't overflow the circle */
+  }
+  .profile img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    padding-top: 50%;
   }
 }
